@@ -1,0 +1,18 @@
+te = int(input())
+while(te != 0):
+    n = int(input())
+    l = list(map(int, input().strip().split()))
+    l.sort()
+    fr = {}
+    for i in l:
+        if(i in fr):
+            fr[i] += 1
+        else:
+            fr[i] = 1
+    fr = dict((k, v) for k, v in fr.items() if v >= 2)
+    l = list(fr)
+    if(len(l) >= 2):
+        print(l[len(l)-1]*l[len(l)-2])
+    else:
+        print(-1)
+    te -= 1
